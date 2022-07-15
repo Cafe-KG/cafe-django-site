@@ -14,6 +14,6 @@ RUN pip install -r req.txt
 
 COPY . /cafe
 
-EXPOSE 8000
+EXPOSE 80000
 
 CMD [ "chmod", "+x", "wsgi-entrypoint.sh" ]
