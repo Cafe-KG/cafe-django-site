@@ -30,6 +30,21 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8081",
+    "http://localhost:8080",
+    "http://127.0.0.1:8081"
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
 
 # Application definition
 
@@ -40,6 +55,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # library
+    'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'djoser',
+    
+    # app
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +98,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -88,6 +114,7 @@ DATABASES = {
         "PORT": env("POSTGRES_PORT"),
     }
 }
+
 
 
 # Password validation
