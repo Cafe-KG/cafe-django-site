@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'djoser',
     
     # app
-    'users',d
+    'users',
 ]
 
 MIDDLEWARE = [
