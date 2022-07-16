@@ -43,6 +43,7 @@ urlpatterns = [
     path('api/v1/', include('djoser.urls.authtoken')),
     # app urls
     path('api/v1/', include('users.urls')),
+    path('api/v1/', include('caterings.urls')),
     # swagger urls
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0),
                           name='schema-json'),
