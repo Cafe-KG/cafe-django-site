@@ -20,9 +20,9 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     def validate_password(self, value):
         if len(value) < 8:
-            raise ValueError('Password is short')
+            raise ValueError('Password is short!')
         elif len(value) > 20:
-            raise ValueError('Password is long')
+            raise ValueError('Password is long!')
         else:
             return value
 

@@ -23,7 +23,7 @@ class RegisterUserViewSet(ModelViewSet):
         obj = self.get_object()
 
         if self.request.user != obj.created_by:
-            raise PermissionDenied('Wrong object owner')
+            raise PermissionDenied('Wrong object owner!')
 
         serializer.save()
 
